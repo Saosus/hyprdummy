@@ -1,0 +1,15 @@
+(defwindow dummy
+  :monitor 0
+  :stacking "bg"
+  :windowtype "normal"
+  :geometry (geometry
+              :width "100%"
+              :height "4%")
+  "Hello, World!") ;; this is also a label
+
+(button 
+  :monitor 0
+  :onclick "notify-send Left"
+  :onrightclick "notify-send Right"
+  "Click Me!") ;; this is a label nested within a button
+
