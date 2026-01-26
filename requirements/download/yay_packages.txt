@@ -1,0 +1,10 @@
+cbonsai
+gtk-engine-murrine
+hyprshutdown-git
+hyprtoolkit-git
+mpvpaper
+python-pywalfox
+vi
+walogram-git
+yay
+yay-debug

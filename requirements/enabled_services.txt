@@ -1,0 +1,15 @@
+UNIT FILE                          STATE   PRESET
+bluetooth.service                  enabled disabled
+getty@.service                     enabled enabled
+iwd.service                        enabled disabled
+libvirtd.service                   enabled disabled
+NetworkManager-dispatcher.service  enabled disabled
+NetworkManager-wait-online.service enabled disabled
+NetworkManager.service             enabled disabled
+power-profiles-daemon.service      enabled disabled
+sddm.service                       enabled disabled
+systemd-timesyncd.service          enabled enabled
+upower.service                     enabled disabled
+zapret_discord_youtube.service     enabled disabled
+
+12 unit files listed.

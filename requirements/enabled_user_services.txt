@@ -1,0 +1,8 @@
+UNIT FILE              STATE   PRESET
+mpris-proxy.service    enabled enabled
+pipewire-pulse.service enabled enabled
+pipewire.service       enabled enabled
+playerctld.service     enabled enabled
+wireplumber.service    enabled enabled
+
+5 unit files listed.
