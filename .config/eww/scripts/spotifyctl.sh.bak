@@ -1,0 +1,20 @@
+#!/bin/bash
+EWW_CMD="/home/cppyli/Documents/githubClones/eww/target/release/eww"
+
+# Проверяем, играет ли что-то
+PLAYER_STATUS=$(playerctl status 2>/dev/null)
+
+if [ -z "$PLAYER_STATUS" ]; then
+    # Если музыки нет вообще, просто выключаем (или ничего не делаем)
+    $EWW_CMD update music-revealer=false
+    exit 0
+fi
+
+CURRENT=$($EWW_CMD get music-revealer)
+
+if [ "$CURRENT" = "true" ]; then
+    $EWW_CMD update music-revealer=false
+else
+    $EWW_CMD update music-revealer=true
+fi
+

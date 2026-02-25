@@ -3,7 +3,7 @@ set expandtab
 set tabstop=4
 
 filetype on
-filetyp plugin on
+filetype plugin on
 filetype indent on
 
 syntax on
@@ -26,4 +26,5 @@ call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'jmcantrell/vim-virtualenv'
 	Plug 'vim-python/python-syntax'
+    Plug 'elkowar/yuck.vim'
 call plug#end()

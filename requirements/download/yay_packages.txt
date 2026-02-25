@@ -1,10 +1,10 @@
+amneziavpn-bin
+bridge-utils
 cbonsai
+cpr
 gtk-engine-murrine
-hyprshutdown-git
 hyprtoolkit-git
 mpvpaper
-python-pywalfox
-vi
 walogram-git
 yay
 yay-debug

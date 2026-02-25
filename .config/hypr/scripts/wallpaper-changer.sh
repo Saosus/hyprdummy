@@ -51,7 +51,8 @@ do
 done
 
 # Меняем обои 
-swww img "$WALLPAPER" --transition-bezier 0.5,1,0.89,1 --transition-type wipe --transition-fps 60 --transition-duration 1.2 
+swww img "$WALLPAPER" --transition-bezier 0.25,0.46,0.45,0.94 --transition-type any --transition-fps 60 --transition-duration 1.3
+
 
 #Звуковой эффект
 mpv ~/Media/Sounds/haki1.mp3 --volume=30 --no-video --no-terminal & 
@@ -60,6 +61,10 @@ sleep 0.4 # задержка для синхронности с walrs
 
 # Меняем цветовую схему через walrs
 walrs -q -i "$WALLPAPER" -b 20 -s 150 -W 
+
+#меняем схему eww
+/home/cppyli/Documents/githubClones/eww/target/release/eww reload --no-daemonize
+
 walogram # смена темы telegram 
 
 # перезапускаем службу уведомлений

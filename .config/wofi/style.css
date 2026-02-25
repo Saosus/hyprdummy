@@ -3,7 +3,7 @@
 window {
     border: 1px solid var(--color4);        /* вместо просто 1px solid */
     border-radius: 16px;
-    background-color: var(--background);    /* добавить фон */
+    background-color: rgba(0, 0, 0, 0.99);    /* добавить фон */
 }
 
 #input {
