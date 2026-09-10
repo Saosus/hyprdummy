@@ -12,7 +12,6 @@ cava
 cmake
 cmatrix
 cpio
-cronie
 dbus-glib
 discord
 dnscrypt-proxy
@@ -25,7 +24,6 @@ firefox
 fzf
 git
 glaze
-go
 grim
 grub
 gst-libav
@@ -57,7 +55,6 @@ man-pages
 meson
 ncdu
 net-tools
-networkmanager
 nftables
 ninja
 nmap
@@ -97,7 +94,7 @@ starship
 stow
 strace
 sudo
-swww
+awww
 syncthing
 tmux
 ttf-jetbrains-mono

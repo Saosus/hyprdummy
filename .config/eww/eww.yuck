@@ -1,6 +1,15 @@
+(defpoll get_bat :interval "60s" "~/.config/eww/scripts/get_battery.sh")
+(defpoll get_bat_stat :interval "60s" "~/.config/eww/scripts/get_battery_status.sh")
+(defwidget battery-widget[]
+    (box :class "battery-container" :orientation "h" :spacing -8 :valign "center"
+      (label :class "battery-icon" :text "${get_bat_stat}")
+      (label :class "battery-text" :text "${get_bat}")
+    )
+)
+
 (defvar date-revealer false)
-(defpoll get_time :interval "1s"
-  "date +%H:%M:%S")
+(defpoll get_time :interval "60s"
+  "date +%H:%M")
 (defpoll get_date :interval "21600s"
   "date +%d.%m.%Y")
 (defpoll get_weekday :interval "21600s"
@@ -36,6 +45,25 @@
   )
 )
 
+(defpoll get_layout :interval "1s"
+  "scripts/get_kb.sh")
+(defwidget current_kb [layout]
+  (eventbox :width 50 :height 35 :space-evenly false :class "layout-container"
+    :onclick "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    (label :text {layout == "English" ? "🇺🇸" : "🇷🇺"} :class "layout-label")
+  )
+)
+
+(defwidget tray []
+  (box :class "tray-container"
+    (systray :class "my-systray"
+             :orientation "h"
+             :spacing 8
+             :icon-size 24
+    )
+  )
+)
+
 ;; Define the main window that uses the 'my-bar' widget
 (defwindow topbar
   :monitor 0
@@ -48,12 +76,49 @@
 ;; Define a custom widget that combines several elements
 (defwidget my-bar []
   (box :orientation "h" :class "bar" :vexpand false
-    (box :orientation "h" :halign "start" :valign "center" :spacing 10 :hexpand true :space-evenly false)
-    (box :orientation "h" :halign "center" :valign "center" :spacing 10 :hexpand true :space-evenly false
+    (box :orientation "h" :halign "start" :valign "center" :spacing 10 :hexpand true :space-evenly false
+      (battery-widget)
+    )
+    (box :orientation "h" :halign "center" :valign "center" :spacing 4 :hexpand true :space-evenly false
+      (brightness-widget)
       (mini-cava)
+      (volume-widget)
     )
     (box :orientation "h" :halign "end" :valign "center" :spacing 10 :hexpand true :space-evenly false
+      (tray)
+      (current_kb :layout get_layout)
       (time :time get_time)
+    )
+  )
+)
+
+;; ==================== BRIGHTNESS WIDGET ====================
+(defpoll brightness_info :interval "1s" "~/.config/eww/scripts/get_brightness.sh")
+
+(defwidget brightness-widget[]
+  (eventbox
+    :onscroll "scripts/brightness_control.sh {}"
+    :onclick "scripts/brightness_control.sh"
+    :class "brightness-container"
+    (box :orientation "h" :spacing -2 :valign "center"
+      (label :class "brightness-text" :text "${brightness_info}")
+      (label :class "brightness-icon" :text "󰃠")
+    )
+  )
+)
+
+;; ==================== VOLUME WIDGET ====================
+(defpoll volume_info :interval "1s" "~/.config/eww/scripts/get_volume.sh")
+(defpoll volstatus_info :interval "1s" "~/.config/eww/scripts/get_vol_status.sh")
+
+(defwidget volume-widget []
+  (eventbox
+    :onscroll "scripts/volume_control.sh {}"
+    :onclick "scripts/volume_control.sh mute"
+    :class "volume-container"
+    (box :orientation "h" :spacing 1 :valign "center"
+      (label :class "volume-text" :text "${volume_info}")
+      (label :class "volume-icon" :text "${volstatus_info}")
     )
   )
 )
@@ -129,6 +194,7 @@
        :spacing 10
     (eventbox 
           :onrightclick "~/.config/hypr/scripts/wallpaper-changer.sh"
+          :onrightclick "wofi --show drun -b -a --term=$terminal -C ~/.cache/wal/colors.css & disown"
           :onclick "scripts/spotifyctl.sh"
           :vexpand false
           :class "cava-clickable"

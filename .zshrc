@@ -52,15 +52,14 @@ alias qqen='pacman -Qqen' #pacman packages
 alias qqem='pacman -Qqem' #AUR and other packages
 alias open='xdg-open'
 alias ff='fastfetch'
-
-alias zapen='bash Documents/githubClones/zapret-discord-youtube-linux/service.sh'
-#alias eww='/home/cppyli/Documents/githubClones/eww/target/release/eww'
+alias resnet='sudo systemctl restart iwd.service; sudo systemctl restart systemd-networkd.service; sudo systemctl restart systemd-resolved.service'
+alias zapen='bash /opt/zapret-discord-youtube-linux/service.sh'
+alias resstat='~/.config/hypr/scripts/statistic_message/reset_counter.sh'
+#alias eww='/home/cppyli/docs/githubClones/eww/target/release/eww'
 
 #export
 export PATH="$HOME/Documents/githubClones/eww/target/release/:$PATH"
-export PATH="${PATH}:${HOME}/python-env/bin"
-export PATH=$PATH:/home/cppyli/.spicetify
-export PATH="/home/cppyli/.local/bin:$PATH"
+export PATH="$HOME/docs/githubClones/eww/target/release/:$PATH"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 #prompt

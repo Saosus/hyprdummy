@@ -14,7 +14,11 @@ while true; do
 
     if [ "$BAT_STATUS" == "Discharging" ] && [ "$BAT_LVL" -le "$THRESHOLD" ]; then
         notify-send --urgency=critical "BRAH, NEED PAWAH!" "Level: ${BAT_LVL}% remaining."
+<<<<<<< HEAD
 	mpv ~/Media/Sounds/flashback-one-piece.mp3 # Discharging sound effect
+=======
+	mpv ~/media/sounds/flashback-one-piece.mp3 # Discharging sound effect
+>>>>>>> 9d211cf (reinitialized repo)
 	powerprofilesctl set power-saver
 
         # Sleep for a longer period after notification to avoid spamming

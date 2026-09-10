@@ -1,0 +1,8 @@
+Script started on 2026-07-17 15:41:51+05:00 [TERM="xterm-kitty" TTY="/dev/pts/2" COLUMNS="170" LINES="37"]
+]0;cppyli@kodoku:~/.config/hypr[?2004h[cppyli@kodoku hypr]$ clear
+[?2004l[H[2J]0;cppyli@kodoku:~/.config/hypr[?2004h[cppyli@kodoku hypr]$ ..
+[?2004lbash: ..: command not found
+]0;cppyli@kodoku:~/.config/hypr[?2004h[cppyli@kodoku hypr]$ exit
+[?2004lexit
+
+Script done on 2026-07-17 15:41:56+05:00 [COMMAND_EXIT_CODE="127"]

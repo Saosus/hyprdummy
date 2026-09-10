@@ -19,7 +19,11 @@ function wp_is_new () {
 }		
 
 # Директория с обоями
+<<<<<<< HEAD
 WALLPAPER_DIR="/home/cppyli/Media/Wallpapers/Solyanka"
+=======
+WALLPAPER_DIR="/home/cppyli/media/wallps/solyanka"
+>>>>>>> 9d211cf (reinitialized repo)
 
 # Проверяем, существует ли директория
 if [ ! -d "$WALLPAPER_DIR" ]; then
@@ -51,22 +55,41 @@ do
 done
 
 # Меняем обои 
+<<<<<<< HEAD
 swww img "$WALLPAPER" --transition-bezier 0.25,0.46,0.45,0.94 --transition-type any --transition-fps 60 --transition-duration 1.3
 
 
 #Звуковой эффект
 mpv ~/Media/Sounds/haki1.mp3 --volume=30 --no-video --no-terminal & 
+=======
+awww img "$WALLPAPER" --transition-bezier 0.25,0.46,0.45,0.94 --transition-type any --transition-fps 60 --transition-duration 1.3
+
+
+#Звуковой эффект
+mpv ~/media/sounds/haki1.mp3 --volume=30 --no-video --no-terminal & 
+>>>>>>> 9d211cf (reinitialized repo)
 
 sleep 0.4 # задержка для синхронности с walrs
 
 # Меняем цветовую схему через walrs
 walrs -q -i "$WALLPAPER" -b 20 -s 150 -W 
 
+<<<<<<< HEAD
 #меняем схему eww
 /home/cppyli/Documents/githubClones/eww/target/release/eww reload --no-daemonize
+=======
+#обновляем hyprland цвета
+hyprctl reload
+
+#меняем схему eww
+eww reload --no-daemonize --force-wayland
+>>>>>>> 9d211cf (reinitialized repo)
 
 walogram # смена темы telegram 
 
 # перезапускаем службу уведомлений
 makoctl reload 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d211cf (reinitialized repo)

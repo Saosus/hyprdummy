@@ -20,6 +20,58 @@
 
 .time-label {
   font-size: 28px;
+}
+
+.battery-container {
+  font-size: 24px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .battery-text{
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-right: 8px;
+  }
+  
+  .battery-icon{
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: cyan;
+    margin-left: 0px;
+  }
+}
+
+.my-systray{
+  all: unset;
+  font-size: 20px;
+  
+  color: red;
+}
+
+.layout-container {
+  border-radius: 10px;
+  background-color: rgba(colors.$color4, 0.99);
+
+  .layout-label {
+    font-size: 28px;
+    color: rgba(colors.$foreground, 0.99);
+    padding: 0px;
+
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+}
+
+.time-label {
+  font-size: 28px;
+  font-weight: bold;
+
   border-radius: 12px;
 
   margin-top: 0px;
@@ -45,6 +97,7 @@
   
   .date-data {
     font-size: 32px;
+    font-size: 28px;
     padding: 20px 0px;
     border-radius: 16px;
   
@@ -63,8 +116,65 @@
 }
 
 .cava-clickable {
+  .cava-style {
+    border-radius: 9px;
+    padding: 1px 12px;
+  
+    font-size: 24px;
+    font-weight: bold;
+
+    color: colors.$color9;
+    background-color: rgba(colors.$foreground, 0.10);
+    
+    transition: 200ms linear background-color;
+  }
+  
   &:hover .cava-style {
     background-color: rgba(colors.$foreground, 0.20);
+  }
+}
+
+.brightness-container {
+  font-size: 24px;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .brightness-text{
+    font-weight: bold;
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+  
+  .brightness-icon{
+    font-size: 24px;
+    margin-bottom: 2px;
+    color: yellow;
+    margin-right: 8px;
+  }
+}
+
+.volume-container {
+  font-size: 24px;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .volume-text{
+    font-weight: bold;
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-left: 8px;
+  }
+  
+  .volume-icon{
+    font-size: 24px;
+    margin-bottom: 2px;
+    color: red;
+    margin-right: 4px;
   }
 }
 
@@ -94,7 +204,7 @@
     border-radius: 1rem;
 }
 
-.app-ico{
+.app-icon{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -136,13 +246,13 @@
   border-radius: 10px;
 }
 
-.music-timer{
+.music-timer {
   font-size: 24px;
   color: rgb(205,212,246);
   margin:3px 20px;
 }
 
-.mico{
+.mico {
   font-size:60px;
   margin-left:10px;
 

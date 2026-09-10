@@ -15,3 +15,21 @@ icon-location=left
 
 max-visible=3
 anchor=bottom-right
+<<<<<<< HEAD
+=======
+
+[app-name="Telegram Desktop"]
+default-timeout=3000
+
+[app-name="udiskie"]
+default-timeout=3000
+
+[app-name="iwgtk"]
+default-timeout=3000
+
+[app-name="blueman"]
+default-timeout=3000
+
+[summary="Timer"]
+on-notify=exec mpv --no-video /home/cppyli/Media/Sounds/one-piece-to-the-grand-line.mp3
+>>>>>>> 9d211cf (reinitialized repo)
