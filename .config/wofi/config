@@ -1,0 +1,10 @@
+width = 500
+height = 400
+
+prompt = Search...
+allow_images = true
+
+location = center
+matching = strict-contains
+
+term = kitty

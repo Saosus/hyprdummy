@@ -1,0 +1,41 @@
+@import url('/home/cppyli/.cache/wal/colors.css');
+
+window {
+    border: 1px solid var(--color4);        /* вместо просто 1px solid */
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.99);    /* добавить фон */
+}
+
+#input {
+    font-family: "Thunderman";
+    font-size: 20;
+    margin: 8px;
+    border-radius: 16px;
+    background-color: var(--color0);        /* фон из переменной */
+    color: var(--foreground);               /* цвет текста из переменной */
+    border: 1px solid var(--color8);        /* граница из переменной */
+}
+
+#inner-box {
+    font-family: "Thunderman";
+    font-size: 16;
+    margin: 5px;
+    border-radius: 16px;
+    background-color: var(--background);    /* добавить фон */
+}
+
+#text {
+    margin: 18px;
+    color: var(--foreground);               /* цвет текста из переменной */
+}
+
+/* Также можно добавить для других элементов */
+#scroll {
+    margin: 0px;
+    background-color: var(--color8);        /* цвет скролла */
+}
+
+#outer-box {
+    margin: 8px;
+    background-color: var(--background);    /* фон внешнего блока */
+}

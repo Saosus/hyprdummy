@@ -1,0 +1,204 @@
+(defpoll get_bat :interval "60s" "~/.config/eww/scripts/get_battery.sh")
+(defpoll get_bat_stat :interval "60s" "~/.config/eww/scripts/get_battery_status.sh")
+(defwidget battery-widget[]
+    (box :class "battery-container" :orientation "h" :spacing -8 :valign "center"
+      (label :class "battery-icon" :text "${get_bat_stat}")
+      (label :class "battery-text" :text "${get_bat}")
+    )
+)
+
+(defvar date-revealer false)
+(defpoll get_time :interval "60s"
+  "date +%H:%M")
+(defpoll get_date :interval "21600s"
+  "date +%d.%m.%Y")
+(defpoll get_weekday :interval "21600s"
+  "date +%A")
+(defwidget time [time]
+  (eventbox :width 100 :height 35 :space-evenly false
+    :onclick "scripts/showdate.sh"
+    (label :text "${time}" :class "time-label")
+  )
+)
+
+(defwindow datepanel
+  :monitor 0
+  :geometry (geometry :y "-0.8%" :x "2.5%" :width "15%" :height "10%" :anchor "top right")
+  :stacking "fg"
+  :exclusive false
+  (expander :expanded true  :class "date"
+    (revealer :transition "slidetop"
+              :reveal date-revealer
+              :duration "200ms"
+              (date-widget)
+    )
+  )
+)
+
+(defwidget date-widget []
+  (box :orientation "h" :class "date-container" :spacing 5
+    (box :orientation "v" :class "date-data" :spacing 5
+      (label :text "${get_date}")
+      (label :text "${get_weekday}")
+    )
+    (box :class "image") 
+  )
+)
+
+(defpoll get_layout :interval "1s"
+  "scripts/get_kb.sh")
+(defwidget current_kb [layout]
+  (eventbox :width 50 :height 35 :space-evenly false :class "layout-container"
+    :onclick "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    (label :text {layout == "English" ? "🇺🇸" : "🇷🇺"} :class "layout-label")
+  )
+)
+
+(defwidget tray []
+  (box :class "tray-container"
+    (systray :class "my-systray"
+             :orientation "h"
+             :spacing 8
+             :icon-size 24
+    )
+  )
+)
+
+;; Define the main window that uses the 'my-bar' widget
+(defwindow topbar
+  :monitor 0
+  :geometry (geometry :x "0%" :y "0.7%" :width "95%" :height "3.4%" :anchor "top center")
+  :stacking "fg"
+  :exclusive true
+  (my-bar) ;; This is the single top-level widget in the window
+)
+
+;; Define a custom widget that combines several elements
+(defwidget my-bar []
+  (box :orientation "h" :class "bar" :vexpand false
+    (box :orientation "h" :halign "start" :valign "center" :spacing 10 :hexpand true :space-evenly false
+      (battery-widget)
+    )
+    (box :orientation "h" :halign "center" :valign "center" :spacing 4 :hexpand true :space-evenly false
+      (brightness-widget)
+      (mini-cava)
+      (volume-widget)
+    )
+    (box :orientation "h" :halign "end" :valign "center" :spacing 10 :hexpand true :space-evenly false
+      (tray)
+      (current_kb :layout get_layout)
+      (time :time get_time)
+    )
+  )
+)
+
+;; ==================== BRIGHTNESS WIDGET ====================
+(defpoll brightness_info :interval "1s" "~/.config/eww/scripts/get_brightness.sh")
+
+(defwidget brightness-widget[]
+  (eventbox
+    :onscroll "scripts/brightness_control.sh {}"
+    :onclick "scripts/brightness_control.sh"
+    :class "brightness-container"
+    (box :orientation "h" :spacing -2 :valign "center"
+      (label :class "brightness-text" :text "${brightness_info}")
+      (label :class "brightness-icon" :text "󰃠")
+    )
+  )
+)
+
+;; ==================== VOLUME WIDGET ====================
+(defpoll volume_info :interval "1s" "~/.config/eww/scripts/get_volume.sh")
+(defpoll volstatus_info :interval "1s" "~/.config/eww/scripts/get_vol_status.sh")
+
+(defwidget volume-widget []
+  (eventbox
+    :onscroll "scripts/volume_control.sh {}"
+    :onclick "scripts/volume_control.sh mute"
+    :class "volume-container"
+    (box :orientation "h" :spacing 1 :valign "center"
+      (label :class "volume-text" :text "${volume_info}")
+      (label :class "volume-icon" :text "${volstatus_info}")
+    )
+  )
+)
+
+(defvar music-revealer false)
+(deflisten music :initial "{}" "./scripts/music.sh")
+(deflisten pmusic :initial "{}" "./scripts/pmusic.sh")
+
+(defwindow music-box
+  :monitor 0
+  :geometry (geometry :y "-0.8%" :height "20%" :width "20%"  :anchor "top center")
+  :stacking "fg"
+  :exclusive false
+  (expander :expanded true  :class "music"
+    (revealer :transition "slidetop"
+              :reveal music-revealer
+              :duration "200ms"
+              (mini-spotify)
+    )
+  )
+)
+
+(defwidget mini-spotify []
+         (box :class "music-container"
+              :space-evenly false
+              :orientation "v"
+              (box :class "music-title"
+                   :orientation "h"
+                   :space-evenly false
+                   (box :class "music-thumbnail" 
+                        :style "background-image: url('${music.thumbnail}');"
+                   )
+                   (box :class "music-desc"
+                        :orientation "v"
+                        :space-evenly false
+                        (label :class "main-title" :halign "start" :limit-width 21 :text "${music.title}")
+                        (label :class "artist" :halign  "start" :limit-width 31 :text "By ${music.artist}")
+                   )
+              )
+              (scale :class "music-slider"
+                     :min 0
+                     :max {music.length}
+                     :value {pmusic.position}
+                     :onchange "playerctl position {}"
+              )
+              (box :class "music-timer"
+                   (label :halign "start" :text "${pmusic.positionStr}")
+                   (label :halign "end" :text "${music.lengthStr}")
+              )
+              (box :class "music-action"
+                   :orientation "h"
+                   :space-evenly false
+                   :halign "center"
+                   :spacing 30
+                   (eventbox :class "mico" :cursor "pointer" :onclick "playerctl previous" "󰒮")
+                   (eventbox :class "mico" :cursor "pointer" :onclick "playerctl play-pause" {music.status == "Playing" ? "󰓛" : "󰐊"})
+                   (eventbox :class "mico" :cursor "pointer" :onclick "playerctl next" "󰒭")
+              )
+         )
+)
+ 
+
+
+;; CAVA Виджет
+(deflisten cava-data :initial "" "~/.config/eww/scripts/cava-script")
+(defpoll playerctl_status :interval "1s"
+  "playerctl status || echo 'Stopped'")
+
+(defwidget mini-cava []
+  (box :orientation "h"
+       :halign "center"
+       :space-evenly false
+       :spacing 10
+    (eventbox 
+          :onrightclick "wofi --show drun -b -a --term=$terminal -C ~/.cache/wal/colors.css & disown"
+          :onclick "scripts/spotifyctl.sh"
+          :vexpand false
+          :class "cava-clickable"
+          (label :text {playerctl_status == "Playing" ? cava-data : "心米美"} :vexpand false :class "cava-style")
+    )
+  )
+)
+

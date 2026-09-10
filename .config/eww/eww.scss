@@ -1,0 +1,248 @@
+@use '/home/cppyli/.cache/wal/colors.scss';
+
+* { 
+  all: unset;
+  font-family: 'Neucha', 'JetBrainsMono Nerd Font';
+}
+
+.bar {
+  border-radius: 18px;
+  padding: 5px 4px 5px;
+
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+
+  color: colors.$cursor;
+  background-color: rgba(colors.$background, 0.99);
+}
+
+.battery-container {
+  font-size: 24px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .battery-text{
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-right: 8px;
+  }
+  
+  .battery-icon{
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: cyan;
+    margin-left: 0px;
+  }
+}
+
+.my-systray{
+  all: unset;
+  font-size: 20px;
+  
+  color: red;
+}
+
+.layout-container {
+  border-radius: 10px;
+  background-color: rgba(colors.$color4, 0.99);
+
+  .layout-label {
+    font-size: 28px;
+    color: rgba(colors.$foreground, 0.99);
+    padding: 0px;
+
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+}
+
+.time-label {
+  font-size: 28px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  margin-top: 0px;
+  margin-right: 4px;
+  margin-left: 4px;
+  margin-bottom: 0px;
+
+  padding-top: 8px; 
+  background-color: rgba(colors.$color9, 0.99);
+}
+
+.date-container {
+  border-radius: 12px;
+  padding: 10px;
+  background-color: rgba(colors.$background, 0.99);
+  
+  .image {
+    border-radius: 12px;
+    background-image:url('/home/cppyli/.config/hypr/brook.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .date-data {
+    font-size: 28px;
+    padding: 20px 0px;
+    border-radius: 16px;
+  
+  }
+}
+
+.cava-clickable {
+  .cava-style {
+    border-radius: 9px;
+    padding: 1px 12px;
+  
+    font-size: 24px;
+    font-weight: bold;
+
+    color: colors.$color9;
+    background-color: rgba(colors.$foreground, 0.10);
+    
+    transition: 200ms linear background-color;
+  }
+  
+  &:hover .cava-style {
+    background-color: rgba(colors.$foreground, 0.20);
+  }
+}
+
+.brightness-container {
+  font-size: 24px;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .brightness-text{
+    font-weight: bold;
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+  
+  .brightness-icon{
+    font-size: 24px;
+    margin-bottom: 2px;
+    color: yellow;
+    margin-right: 8px;
+  }
+}
+
+.volume-container {
+  font-size: 24px;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .volume-text{
+    font-weight: bold;
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-left: 8px;
+  }
+  
+  .volume-icon{
+    font-size: 24px;
+    margin-bottom: 2px;
+    color: red;
+    margin-right: 4px;
+  }
+}
+
+.music {
+  border-radius: 12px;
+  /*background-color: rgba(colors.$background, 0.99);*/
+  color: red;
+}
+
+.music-container {
+  border-radius: 10px;
+  background-color: rgba(colors.$background, 0.99);
+}
+
+.music-title{
+  margin-left:7px;
+  margin-right:7px;
+  margin-top:7px;
+}
+
+.music-thumbnail{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 6rem;
+    min-width: 6rem;
+    border-radius: 1rem;
+}
+
+.app-ico{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+}
+
+.main-title{
+  margin-top:15px;
+  margin-bottom:12px;
+  margin-left:15px;
+  font-size:28px;
+  color: #4D9FEC;
+}
+
+.artist{
+  color: rgb(205,212,246);
+  font-size:20px;
+  margin-left:15px;
+}
+
+.music-slider{
+  margin-top:10px;
+}
+
+.music-slider trough {
+  all: unset;
+  background-color: rgba(0,0,0,0.3);
+  box-shadow: 0 2px 3px 2px rgba(6,6,11,0.3);
+  border-radius: 50px;
+  min-height: 10px;
+  min-width: 270px;
+  margin: 10 20px 0 20px;
+}
+
+.music-slider trough highlight {
+  all: unset;
+  background-color:rgb(48,100,170);
+  border-radius: 10px;
+}
+
+.music-timer{
+  font-size: 24px;
+  color: rgb(205,212,246);
+  margin:3px 20px;
+}
+
+.mico{
+  font-size:60px;
+  margin-left:10px;
+
+  color: colors.$foreground;
+  transition:color 0.3s;
+  &:hover{
+    color:rgba(colors.$color2, 0.99);
+  }
+}

@@ -1,0 +1,8 @@
+amneziavpn-bin
+bridge-utils
+cpr
+hyprtoolkit-git
+walogram-git
+walrs
+yay
+yay-debug

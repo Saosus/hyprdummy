@@ -1,0 +1,11 @@
+[Added Associations]
+text/plain=vim.desktop;Alacritty.desktop;
+application/x-tar=torbrowser.desktop;
+text/x-csrc=Alacritty.desktop;
+application/x-zerosize=vim.desktop;
+application/x-shellscript=Alacritty.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=org.pwmt.zathura-pdf-poppler.desktop;
+
+[Default Applications]
+text/plain=Alacritty.desktop
+application/x-zerosize=vim.desktop

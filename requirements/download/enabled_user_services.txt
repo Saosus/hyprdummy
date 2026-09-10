@@ -1,0 +1,22 @@
+  UNIT                                                                       LOAD   ACTIVE SUB     DESCRIPTION
+  at-spi-dbus-bus.service                                                    loaded active running Accessibility services bus
+  dbus-:1.1-org.telegram.desktop._2e7cba8ee3bba9c4b7e4ce3236fe4fcf@0.service loaded active running dbus-:1.1-org.telegram.desktop._2e7cba8ee3bba9c4b7e4ce3236fe4fcf@0.service
+  dbus-:1.16-org.a11y.atspi.Registry@0.service                               loaded active running dbus-:1.16-org.a11y.atspi.Registry@0.service
+  dbus-broker.service                                                        loaded active running D-Bus User Message Bus
+  mako.service                                                               loaded active running Lightweight Wayland notification daemon
+  mpris-proxy.service                                                        loaded active running Bluetooth mpris proxy
+  pipewire-pulse.service                                                     loaded active running PipeWire PulseAudio
+  pipewire.service                                                           loaded active running PipeWire Multimedia Service
+  wireplumber.service                                                        loaded active running Multimedia Service Session Manager
+  xdg-desktop-portal-gtk.service                                             loaded active running Portal service (GTK/GNOME implementation)
+  xdg-desktop-portal-hyprland.service                                        loaded active running Portal service (Hyprland implementation)
+  xdg-desktop-portal.service                                                 loaded active running Portal service
+  xdg-document-portal.service                                                loaded active running flatpak document portal service
+  xdg-permission-store.service                                               loaded active running sandboxed app permission store
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+14 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
