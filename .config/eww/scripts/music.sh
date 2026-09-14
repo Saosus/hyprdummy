@@ -1,9 +1,23 @@
 #!/bin/bash
 base_dir="$HOME/.config/eww/"
 image_file="${base_dir}image.jpg"
+<<<<<<< HEAD
 firefox_image="$HOME/.config/mozilla/firefox/firefox-mpris/*.png"
 
 playerctl metadata --player=firefox -F -f '{{playerName}}|{{title}}|{{artist}}|{{mpris:artUrl}}|{{status}}|{{mpris:length}}' | while IFS='|' read -r name title artist artUrl status length; do
+=======
+<<<<<<< HEAD
+firefox_image="$HOME/.mozilla/firefox/firefox-mpris/*.png"
+
+mkdir -p "$base_dir"
+
+playerctl metadata --player=firefox,spotify -F -f '{{playerName}}|{{title}}|{{artist}}|{{mpris:artUrl}}|{{status}}|{{mpris:length}}' | while IFS='|' read -r name title artist artUrl status length; do
+=======
+firefox_image="$HOME/.config/mozilla/firefox/firefox-mpris/*.png"
+
+playerctl metadata --player=firefox -F -f '{{playerName}}|{{title}}|{{artist}}|{{mpris:artUrl}}|{{status}}|{{mpris:length}}' | while IFS='|' read -r name title artist artUrl status length; do
+>>>>>>> 9d211cf (reinitialized repo)
+>>>>>>> fca83c1 (reinitialized repo)
     if [[ -n "$length" && "$length" =~ ^[0-9]+$ ]]; then
         len_sec=$(( (length + 500000) / 1000000 ))
         mins=$((len_sec / 60))
@@ -43,6 +57,14 @@ playerctl metadata --player=firefox -F -f '{{playerName}}|{{title}}|{{artist}}|{
         # Fallback for empty or unsupported URLs
         cp "$fallback_image" "$image_file"
     fi
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9d211cf (reinitialized repo)
+>>>>>>> fca83c1 (reinitialized repo)
     jq -n -c \
         --arg name "$name" \
         --arg title "$title" \

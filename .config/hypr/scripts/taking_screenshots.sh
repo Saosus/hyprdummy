@@ -1,6 +1,15 @@
 #!/bin/bash
 
+SCREENSHOT_NAME=Screenshot-$(date +%F_%T).png
+<<<<<<< HEAD
 SCREENSHOT_DIR=~/media/Screenshots
+=======
+<<<<<<< HEAD
+SCREENSHOT_DIR=~/Media/Screenshots
+=======
+SCREENSHOT_DIR=~/media/Screenshots
+>>>>>>> 9d211cf (reinitialized repo)
+>>>>>>> fca83c1 (reinitialized repo)
 SCREENSHOT_SAVE="$SCREENSHOT_DIR/$SCREENSHOT_NAME"
 
 # Создаем папку, если её нет
@@ -17,7 +26,15 @@ if [[ -n "$GEOM" ]]; then
 
     # Проверяем, что файл действительно создался и он не пустой
     if [[ -s "$SCREENSHOT_SAVE" ]]; then
+<<<<<<< HEAD
         mpv ~/media/sounds/transponder-snail-accept-call.mp3 --volume=50 --no-terminal &
+=======
+<<<<<<< HEAD
+        mpv ~/Media/Sounds/transponder-snail-accept-call.mp3 --volume=50 --no-terminal &
+=======
+        mpv ~/media/sounds/transponder-snail-accept-call.mp3 --volume=50 --no-terminal &
+>>>>>>> 9d211cf (reinitialized repo)
+>>>>>>> fca83c1 (reinitialized repo)
         notify-send --transient --urgency=low "SCREENSHOT TAKEN, BRAH!" "Saved to $SCREENSHOT_SAVE" -t 3000
     else
         notify-send --transient --urgency=low "IT'S EMPTY, BRAH" "SCREENSHOT NOT TAKEN" -t 3000

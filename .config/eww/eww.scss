@@ -70,6 +70,59 @@
 
 .time-label {
   font-size: 28px;
+<<<<<<< HEAD
+=======
+}
+
+.battery-container {
+  font-size: 24px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  background-color: rgba(colors.$color8, 0.99);
+
+  .battery-text{
+    color: colors.$color7;
+    margin-top: 4px;
+    margin-right: 8px;
+  }
+  
+  .battery-icon{
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: cyan;
+    margin-left: 0px;
+  }
+}
+
+.my-systray{
+  all: unset;
+  font-size: 20px;
+  
+  color: red;
+}
+
+.layout-container {
+  border-radius: 10px;
+  background-color: rgba(colors.$color4, 0.99);
+
+  .layout-label {
+    font-size: 28px;
+    color: rgba(colors.$foreground, 0.99);
+    padding: 0px;
+
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+
+}
+
+.time-label {
+  font-size: 28px;
+>>>>>>> fca83c1 (reinitialized repo)
   font-weight: bold;
 
   border-radius: 12px;
@@ -96,7 +149,14 @@
   }
   
   .date-data {
+<<<<<<< HEAD
     font-size: 32px;
+=======
+<<<<<<< HEAD
+=======
+    font-size: 32px;
+>>>>>>> fca83c1 (reinitialized repo)
+>>>>>>> 35089f2 (fixed pull issues)
     font-size: 28px;
     padding: 20px 0px;
     border-radius: 16px;

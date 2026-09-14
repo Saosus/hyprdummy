@@ -18,7 +18,15 @@ disable_colors = 1
 # Мы убираем ; в конце и заменяем цифры 0-7 на символы блоков
     cava -p $config_file | stdbuf -oL sed -u '
         s/;//g;
+<<<<<<< HEAD
         s/0/_/g;
+=======
+<<<<<<< HEAD
+        s/0/ /g;
+=======
+        s/0/_/g;
+>>>>>>> 9d211cf (reinitialized repo)
+>>>>>>> fca83c1 (reinitialized repo)
         s/1/▂/g;
         s/2/▃/g;
         s/3/▄/g;

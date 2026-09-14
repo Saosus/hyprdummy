@@ -55,6 +55,13 @@ alias ff='fastfetch'
 alias resnet='sudo systemctl restart iwd.service; sudo systemctl restart systemd-networkd.service; sudo systemctl restart systemd-resolved.service'
 alias zapen='bash /opt/zapret-discord-youtube-linux/service.sh'
 alias resstat='~/.config/hypr/scripts/statistic_message/reset_counter.sh'
+<<<<<<< HEAD
+=======
+#alias eww='/home/cppyli/docs/githubClones/eww/target/release/eww'
+
+#export
+export PATH="/home/cppyli/.local/bin:$PATH"
+>>>>>>> 35089f2 (fixed pull issues)
 #alias eww='/home/cppyli/docs/githubClones/eww/target/release/eww'
 
 #export
