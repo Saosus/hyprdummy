@@ -15,8 +15,6 @@ icon-location=left
 
 max-visible=3
 anchor=bottom-right
-<<<<<<< HEAD
-=======
 
 [app-name="Telegram Desktop"]
 default-timeout=3000
@@ -32,4 +30,3 @@ default-timeout=3000
 
 [summary="Timer"]
 on-notify=exec mpv --no-video /home/cppyli/Media/Sounds/one-piece-to-the-grand-line.mp3
->>>>>>> 9d211cf (reinitialized repo)
