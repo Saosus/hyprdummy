@@ -193,15 +193,7 @@
        :space-evenly false
        :spacing 10
     (eventbox 
-<<<<<<< HEAD
-          :onrightclick "~/.config/hypr/scripts/wallpaper-changer.sh"
-=======
-<<<<<<< HEAD
-=======
-          :onrightclick "~/.config/hypr/scripts/wallpaper-changer.sh"
->>>>>>> fca83c1 (reinitialized repo)
->>>>>>> 35089f2 (fixed pull issues)
-          :onrightclick "wofi --show drun -b -a --term=$terminal -C ~/.cache/wal/colors.css & disown"
+          :onrightclick "wofi --show drun -x 700 -b -a &"
           :onclick "scripts/spotifyctl.sh"
           :vexpand false
           :class "cava-clickable"
