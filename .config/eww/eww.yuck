@@ -15,7 +15,7 @@
 (defpoll get_weekday :interval "21600s"
   "date +%A")
 (defwidget time [time]
-  (eventbox :width 100 :height 35 :space-evenly false
+  (eventbox :width 100 :height 35 :space-evenly "false"
     :onclick "scripts/showdate.sh"
     (label :text "${time}" :class "time-label")
   )
